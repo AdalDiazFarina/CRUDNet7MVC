@@ -1,0 +1,55 @@
+﻿@model CrudNet7MVC.Models.Contacto
+@{
+    ViewData["Title"] = "Detalle Contacto";
+}
+
+<h1 class="text-center">Contaco con .NET 7 (.NET Core MVC)</h1>
+
+<div class="row">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-hearder bg-dark">
+                <h3 class="text-white"><strong>Detalle de usuario</strong></h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Nombre: </strong>@Html.DisplayFor(m => m.Nombre)</li>
+                    <li class="list-group-item"><strong>Teléfono: </strong>@Html.DisplayFor(m => m.Telefono)</li>
+                    <li class="list-group-item"><strong>Celular: </strong>@Html.DisplayFor(m => m.Celular)</li>
+                    <li class="list-group-item"><strong>Email: </strong>@Html.DisplayFor(m => m.Email)</li>
+                </ul>
+                <a asp-controller="Inicio" asp-action="Index">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            //Llamar a datatable
+            $('#tablaUsuarios').DataTable({
+                language: {
+                    "decimal": "",
+                    "emptyTable": "No hay información",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                    "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                    "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar _MENU_ Entradas",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "zeroRecords": "Sin resultados encontrados",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                }
+            });
+        });
+    </script>
+}
